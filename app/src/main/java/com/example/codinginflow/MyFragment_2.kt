@@ -5,15 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProviders
 import com.example.codinginflow.databinding.FragmentMain2Binding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyFragment_2: Fragment() {
 
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private var _binding: FragmentMain2Binding? = null
     private val binding
     get() = _binding
-    private var sharedViewModel: SharedViewModel? = null
 
 
     override fun onCreateView(
@@ -29,9 +33,8 @@ class MyFragment_2: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.btnFragment2?.setOnClickListener { sharedViewModel?.setText(binding?.txtFragment2?.text.toString()) }
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(SharedViewModel::class.java)
-        sharedViewModel?.text?.observe(viewLifecycleOwner){
+        binding?.btnFragment2?.setOnClickListener { sharedViewModel.setText(binding?.txtFragment2?.text.toString()) }
+        sharedViewModel.text.observe(viewLifecycleOwner){
             binding?.txtFragment2?.setText(it)
         }
     }
