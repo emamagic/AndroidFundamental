@@ -1,12 +1,11 @@
 package com.example.codinginflow
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.codinginflow.databinding.FragmentMain1Binding
+import androidx.lifecycle.ViewModelProviders
 import com.example.codinginflow.databinding.FragmentMain2Binding
 
 class MyFragment_2: Fragment() {
@@ -14,7 +13,7 @@ class MyFragment_2: Fragment() {
     private var _binding: FragmentMain2Binding? = null
     private val binding
     get() = _binding
-    private var listener: OnFragment_2? = null
+    private var sharedViewModel: SharedViewModel? = null
 
 
     override fun onCreateView(
@@ -30,21 +29,10 @@ class MyFragment_2: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.btnFragment2?.setOnClickListener { listener?.data_2(binding?.txtFragment2?.text.toString()) }
-    }
-
-    fun setText_2(text: String){
-        binding?.txtFragment2?.setText(text)
-    }
-
-    interface OnFragment_2{
-        fun data_2(message: String)
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragment_2){
-            listener = context
+        binding?.btnFragment2?.setOnClickListener { sharedViewModel?.setText(binding?.txtFragment2?.text.toString()) }
+        sharedViewModel = ViewModelProviders.of(requireActivity()).get(SharedViewModel::class.java)
+        sharedViewModel?.text?.observe(viewLifecycleOwner){
+            binding?.txtFragment2?.setText(it)
         }
     }
 
