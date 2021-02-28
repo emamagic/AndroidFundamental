@@ -1,9 +1,11 @@
 package com.example.codinginflow
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -30,15 +32,19 @@ class MyFragment_1: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.btnFragment1?.setOnClickListener { sharedViewModel.setText(binding?.txtFragment1?.text.toString()) }
-        sharedViewModel.text.observe(viewLifecycleOwner){
-            binding?.txtFragment1?.setText(it)
+        binding?.btnFragment1?.setOnClickListener {
+
         }
+
+
     }
+
 
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
