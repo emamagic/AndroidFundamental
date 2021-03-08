@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#D3ECB7">
+    android:background="#6EA82C">
 
     <EditText
         android:id="@+id/txt_fragment_2"
