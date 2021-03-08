@@ -31,7 +31,7 @@ class MyFragment_1: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.btnFragment1?.setOnClickListener { sharedViewModel?.setText(binding?.txtFragment1?.text.toString()) }
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(SharedViewModel::class.java)
+        sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         sharedViewModel?.text?.observe(viewLifecycleOwner){
             binding?.txtFragment1?.setText(it)
         }
