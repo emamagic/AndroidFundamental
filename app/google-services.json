@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755389226091",
+    "project_id": "codinginflow-e5317",
+    "storage_bucket": "codinginflow-e5317.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755389226091:android:fbb81e6e8d380e4174652e",
+        "android_client_info": {
+          "package_name": "com.example.codinginflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755389226091-mrcujrg0mec5ttpkedlaiss47mu7j2k0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCofRkZQ72TZGiNsUQWQ6sTCwP6HTweAEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755389226091-mrcujrg0mec5ttpkedlaiss47mu7j2k0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
