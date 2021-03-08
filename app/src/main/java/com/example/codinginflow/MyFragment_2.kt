@@ -1,6 +1,7 @@
 package com.example.codinginflow
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,8 +30,10 @@ class MyFragment_2: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.e("TAG", "parent fragment: $parentFragment", )
+
         binding?.btnFragment2?.setOnClickListener { sharedViewModel?.setText(binding?.txtFragment2?.text.toString()) }
-        sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        sharedViewModel = ViewModelProvider(requireParentFragment()).get(SharedViewModel::class.java)
         sharedViewModel?.text?.observe(viewLifecycleOwner){
             binding?.txtFragment2?.setText(it)
         }

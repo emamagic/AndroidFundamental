@@ -1,6 +1,7 @@
 package com.example.codinginflow
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
@@ -12,6 +13,8 @@ class MyHostFragment: Fragment(R.layout.fragment_host) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.e("TAG", "parent fragment host: $parentFragment")
 
         val fragments = arrayListOf(
             MyFragment_1(),
