@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.example.codinginflow.databinding.FragmentMain2Binding
 
 class MyFragment_2: Fragment() {
@@ -30,7 +30,7 @@ class MyFragment_2: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.btnFragment2?.setOnClickListener { sharedViewModel?.setText(binding?.txtFragment2?.text.toString()) }
-        sharedViewModel = ViewModelProviders.of(requireActivity()).get(SharedViewModel::class.java)
+        sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         sharedViewModel?.text?.observe(viewLifecycleOwner){
             binding?.txtFragment2?.setText(it)
         }
