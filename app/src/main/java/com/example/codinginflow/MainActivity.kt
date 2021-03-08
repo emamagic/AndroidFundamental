@@ -1,29 +1,29 @@
 package com.example.codinginflow
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
-import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
-@AndroidEntryPoint
-class MainActivity : AppCompatActivity() ,HostFragment.Test  {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            add(R.id.fragment_container ,HostFragment())
+        bottom_nav.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.fragment_1 -> {
+                    supportFragmentManager.commit { replace(R.id.fragment_container ,MyFragment_1::class.java ,null) }
+                    true
+                }
+                else -> {
+                    supportFragmentManager.commit { replace(R.id.fragment_container ,MyFragment_2::class.java ,null) }
+                    true
+                }
+            }
         }
 
-
-    }
-
-    override fun test() {
-        Toast.makeText(this, "successfull", Toast.LENGTH_SHORT).show()
     }
 
 }
