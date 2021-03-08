@@ -1,13 +1,8 @@
 package com.example.codinginflow
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
-import com.example.codinginflow.databinding.ActivityMainBinding
-import com.example.codinginflow.databinding.FragmentMain1Binding
 
 class MainActivity : AppCompatActivity()  {
 
@@ -19,5 +14,9 @@ class MainActivity : AppCompatActivity()  {
 
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+
+    }
 
 }
