@@ -9,13 +9,28 @@
     android:padding="16dp"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/edt_notification_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="title"/>
+
+    <EditText
+        android:id="@+id/edt_notification_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="message"/>
+
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btn_notification_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="show dialog"/>
+        android:text="send on channel one"/>
 
-
-
+    <Button
+        android:id="@+id/btn_notification_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send on channel one"/>
 
 </LinearLayout>
