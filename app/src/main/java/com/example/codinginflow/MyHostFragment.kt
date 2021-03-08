@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
-class MyHostFragment: Fragment(),MyFragment_1.OnFragment_1 ,MyFragment_2.OnFragment_2 {
+class MyHostFragment: Fragment(R.layout.fragment_host),MyFragment_1.OnFragment_1 ,MyFragment_2.OnFragment_2 {
 
     private lateinit var fragment1: MyFragment_1
     private lateinit var fragment2: MyFragment_2
