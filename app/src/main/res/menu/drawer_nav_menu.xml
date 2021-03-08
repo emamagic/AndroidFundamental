@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_1"
+            android:title="drawer_1"/>
+        <item
+            android:id="@+id/drawer_2"
+            android:title="drawer_2"/>
+        <item
+            android:id="@+id/drawer_3"
+            android:title="drawer_3"/>
+    </group>
 
+    <item android:title="config">
+        <menu>
+            <item
+                android:id="@+id/drawer_4"
+                android:title="drawer_4"/>
+            <item
+                android:id="@+id/drawer_5"
+                android:title="drawer_5"/>
+        </menu>
+    </item>
 
 </menu>
