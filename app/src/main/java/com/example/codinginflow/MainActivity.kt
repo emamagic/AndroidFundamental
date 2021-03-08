@@ -2,6 +2,7 @@ package com.example.codinginflow
 
 import android.app.PendingIntent
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,19 +30,26 @@ class MainActivity : AppCompatActivity() {
         manager = NotificationManagerCompat.from(this)
 
         btn_notification_1.setOnClickListener {
+
+            val largeIcon = BitmapFactory.decodeResource(resources ,R.drawable.common_full_open_on_phone)
+
             // we have config same as channel in application class for api 25 or lower
             val notification = NotificationCompat.Builder(this ,CHANNEL_1_ID)
+                    // you have to call setSmallIcon to Notification work
                     .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
                     .setContentText(edt_notification_message.text.toString())
                     .setContentTitle(edt_notification_title.text.toString())
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
                     .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                     .setColor(Color.BLUE)
-
+                    .setLargeIcon(largeIcon)
+                    .setStyle(NotificationCompat.BigTextStyle()
+                            .bigText(getString(R.string.dummy_string))
+                            .setBigContentTitle("Big Content Title")
+                            .setSummaryText("Summery Text"))
                     .setContentIntent(openActivity())
                     .setAutoCancel(true)
                     .setOnlyAlertOnce(true)
-
                     .addAction(R.mipmap.ic_launcher ,"Toast" ,triggeredBroadCast(edt_notification_message.text.toString()))
                     .build()
             // if we send multiple notification with same id it override on it
@@ -55,6 +63,17 @@ class MainActivity : AppCompatActivity() {
                     .setContentText(edt_notification_message.text.toString())
                     .setContentTitle(edt_notification_title.text.toString())
                     .setPriority(NotificationCompat.PRIORITY_LOW)
+                    .setStyle(NotificationCompat.InboxStyle()
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .addLine("This is line 1")
+                            .setBigContentTitle("Big Content Title")
+                            .setSummaryText("Summery Text"))
                     .build()
             // if we send multiple notification with same id it override on it
             manager.notify(2 ,notification)
