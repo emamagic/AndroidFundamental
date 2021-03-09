@@ -1,11 +1,14 @@
 package com.example.codinginflow
 
 import android.app.PendingIntent
+import android.app.RemoteInput
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.media.session.MediaSessionCompat
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var manager: NotificationManagerCompat
     private lateinit var mediaSession: MediaSessionCompat
 
+    @RequiresApi(Build.VERSION_CODES.KITKAT_WATCH)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,21 +32,18 @@ class MainActivity : AppCompatActivity() {
 
         btn_notification_1.setOnClickListener {
 
-            val picture = BitmapFactory.decodeResource(resources ,R.drawable.common_full_open_on_phone)
+            val remoteInput = RemoteInput.Builder("key_text_reply")
+                    .setLabel("your answer ...")
+                    .build()
 
             // we have config same as channel in application class for api 25 or lower
             val notification = NotificationCompat.Builder(this ,CHANNEL_1_ID)
                     // you have to call setSmallIcon to Notification work
                     .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                    .setContentText(edt_notification_message.text.toString())
-                    .setContentTitle(edt_notification_title.text.toString())
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
                     .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                     .setColor(Color.BLUE)
-                    .setLargeIcon(picture)
-                    .setStyle(NotificationCompat.BigPictureStyle()
-                            .bigPicture(picture)
-                            .bigLargeIcon(null))
+                 //   .setStyle()
                     .setContentIntent(openActivity())
                     .setAutoCancel(true)
                     .setOnlyAlertOnce(true)
