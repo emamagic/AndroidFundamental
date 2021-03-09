@@ -1,30 +1,30 @@
 package com.example.codinginflow
 
-import android.graphics.drawable.AnimationDrawable
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity()  {
-
-    private lateinit var wifiAnimation: AnimationDrawable
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        prev.setOnClickListener {
-            view_fipper.showPrevious()
+        // It work only with coordinator layout
+
+
+        val bottomSheet = BottomSheetBehavior.from(persistence_sheet)
+
+        btn_col.setOnClickListener {
+            bottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
         }
 
-        nex.setOnClickListener {
-            view_fipper.showNext()
-            // show specific chile by index
-            // view_fipper.displayedChild = 0
+        btn_ex.setOnClickListener {
+            bottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
         }
 
     }

@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:padding="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
 
-    <!--        android:autoStart=""-->
-    <ViewFlipper
-        android:id="@+id/view_fipper"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inAnimation="@android:anim/slide_in_left"
-        android:outAnimation="@android:anim/slide_out_right">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
         <Button
+            android:id="@+id/btn_ex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:text="ex"/>
 
-        <ImageView
+        <Button
+            android:id="@+id/btn_col"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_gravity="center"/>
+            android:text="col"/>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/persistence_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@android:color/holo_green_light"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="55dp">
+
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="test text"
-            android:textSize="24sp"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="this is boSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established sSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inenior android engineer with many years of experience. Currently he works at Capital One and lives inttom sheetSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives in"/>
 
-    </ViewFlipper>
+    </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/nex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nex"/>
-
-    <Button
-        android:id="@+id/prev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="prev"/>
     
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
