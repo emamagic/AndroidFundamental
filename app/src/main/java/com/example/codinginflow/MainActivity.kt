@@ -6,6 +6,7 @@ import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity()  {
@@ -15,28 +16,13 @@ class MainActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // It work only with coordinator layout
-
-
-        val bottomSheet = BottomSheetBehavior.from(persistence_sheet)
-
-        btn_col.setOnClickListener {
-            bottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
+        float.setOnClickListener {
+            Snackbar.make(it ,"snackbar" ,2000).show()
         }
 
-        btn_ex.setOnClickListener {
-            bottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
+        btn.setOnClickListener {
+
         }
-
-        bottomSheet.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback(){
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-
-            }
-        })
 
     }
 }

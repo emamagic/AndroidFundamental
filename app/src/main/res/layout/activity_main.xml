@@ -9,43 +9,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        app:layout_dodgeInsetEdges="bottom"/>
 
-        <Button
-            android:id="@+id/btn_ex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ex"/>
-
-        <Button
-            android:id="@+id/btn_col"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="col"/>
-
-    </LinearLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/persistence_sheet"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="@android:color/holo_green_light"
-        app:layout_behavior="@string/bottom_sheet_behavior"
-        app:behavior_hideable="true"
-        app:behavior_peekHeight="55dp">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="this is boSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established sSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inenior android engineer with many years of experience. Currently he works at Capital One and lives inttom sheetSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives inSam is a well established senior android engineer with many years of experience. Currently he works at Capital One and lives in"/>
-
-    </androidx.core.widget.NestedScrollView>
-
-    
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
