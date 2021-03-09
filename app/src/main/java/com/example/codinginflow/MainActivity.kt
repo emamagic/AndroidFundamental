@@ -2,6 +2,7 @@ package com.example.codinginflow
 
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -26,6 +27,16 @@ class MainActivity : AppCompatActivity()  {
         btn_ex.setOnClickListener {
             bottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
         }
+
+        bottomSheet.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback(){
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+            }
+        })
 
     }
 }
