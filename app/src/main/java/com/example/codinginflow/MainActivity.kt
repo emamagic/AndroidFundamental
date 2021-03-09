@@ -17,17 +17,15 @@ class MainActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        prev.setOnClickListener {
+            view_fipper.showPrevious()
+        }
 
-        img.setBackgroundResource(R.drawable.my_animation)
-        wifiAnimation = img.background as AnimationDrawable
-
+        nex.setOnClickListener {
+            view_fipper.showNext()
+            // show specific chile by index
+            // view_fipper.displayedChild = 0
+        }
 
     }
-
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        wifiAnimation.start()
-    }
-
 }
