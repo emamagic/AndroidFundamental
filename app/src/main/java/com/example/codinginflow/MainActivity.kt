@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        float.setOnClickListener {
+        floate.setOnClickListener {
             Snackbar.make(it ,"snackbar" ,2000).show()
         }
 
