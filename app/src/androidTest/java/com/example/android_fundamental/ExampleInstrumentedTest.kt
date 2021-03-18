@@ -1,4 +1,4 @@
-package com.example.codinginflow
+package com.example.android_fundamental
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.codinginflow
+package com.example.android_fundamental
 
 import android.os.Build
 import android.os.Bundle

@@ -1,8 +1,7 @@
-package com.example.codinginflow
+package com.example.android_fundamental
 
 import android.os.Handler
 import android.os.Looper
-import android.os.SystemClock
 import android.util.Log
 
 class MyThread : Thread() {
