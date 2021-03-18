@@ -1,11 +1,11 @@
-package com.example.codinginflow
+package com.example.android_fundamental
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.codinginflow.databinding.Fragment1Binding
+import com.example.android_fundamental.databinding.Fragment1Binding
 
 class MyFragment_1: Fragment() {
 
